@@ -6,6 +6,32 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/standard.css">
 		<link rel="stylesheet" type="text/css" href="css/decks.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+      function activateHuntard() {
+		 
+				$("#huntard").show(200);
+				$("#freeze").hide(200);
+				$("#control").hide(200);
+      }
+			
+			function activateControl() {
+		 
+				$("#huntard").hide(200);
+				$("#freeze").hide(200);
+				$("#control").show(200);
+      }
+			
+			function activateFreeze() {
+		 
+				$("#huntard").hide(200);
+				$("#freeze").show(200);
+				$("#control").hide(200);
+      }
+
+    </script>
+		
+		</script>
 	</head>
 	
 	<body>
@@ -34,24 +60,63 @@
 				<br/>
 				<div class="col-xs-4">
 					<p class="deck_title">Chasseur Aggressif</p>
-					<a href="#">
+					<a href="#huntard" onClick="activateHuntard();">
 					<img src="images/rexxar.png" alt="rexxar" class="hero"/>
 					</a>
 				</div>
 				<div class="col-xs-4">
 					<p class="deck_title">Guerrier Contrôle</p>
-					<a href="#">
+					<a href="#control" onClick="activateControl();">
 					<img src="images/garrosh.png" alt="garrosh" class="hero"/>
 					</a>
 				</div>
 				<div class="col-xs-4">
 					<p class="deck_title">Mage Freeze</p>
-					<a href="#">
+					<a href="#freeze" onClick="activateFreeze();">
 					<img src="images/jaina.png" alt="jaina" class="hero"/>
 					</a>
 				</div>
 			</div>
 			<br/>
+			
+			<div class="row" id="huntard" style="display:none">
+				<div class="col-xs-6">
+					<h3>Chasseur aggro</h3>
+					<p>L'objectif de ce deck est très clair : faire descendre les points de vie adverses à 0 le plus vite possible
+					<br/>Pour cela, tous les moyens sont bons : des serviteurs avec Charge pour attaquer le héros adverse, des armes pour faire encore plus de dégâts et des serviteurs avec Silence pour contrer les Provocation adverses.
+					</p>
+				</div>
+				<div class="col-xs-6">
+						<img src="images/huntard.jpg" alt="decklist" class="decklist"/>
+
+				</div>
+			</div>
+			
+			<div class="row" id="control" style="display:none">
+				<div class="col-xs-6">
+					<h3>Guerrier contrôle</h3>
+					<p>Pour jouer ce deck, il faut savoir être patient, car les parties vont avoir tendance à s'allonger en durée !
+					<br/>Toute la puissance de ce deck réside dans le pouvoir héroïque du guerrier, qui va être ici utilisé à outrance. Le raisonnement est très simple : si vous avez plus de 100 points d'armure, même le plus déterminé des adversaires ne parviendra pas à vous érafler.
+					</p>
+				</div>
+				<div class="col-xs-6">
+						<img src="images/control.jpg" alt="decklist" class="decklist"/>
+
+				</div>
+			</div>
+			
+			<div class="row" id="freeze" style="display:none">
+				<div class="col-xs-6">
+					<h3>Mage Freeze</h3>
+					<p>Il s'agit de l'un des plus vieux archétypes de Hearthstone, établi lors de la bêta du jeu.
+					<br/>On reconnaît facilement ce deck car il est très particulier : il ne compte pas sur les serviteurs mais seulement sur les sorts pour s'imposer. Un bon mage Freeze gèlera les serviteurs adverses pendant toute la partie jusqu'à accumuler assez de dégâts pour finir son adversaire.
+					</p>
+				</div>
+				<div class="col-xs-6">
+						<img src="images/freeze.jpg" alt="decklist" class="decklist"/>
+
+				</div>
+			</div>
 			<div class="row footer">
 				<p><br/><br/>Thomas Demko - Pierre Lagier / Applis Web 2016</p>
 			</div>

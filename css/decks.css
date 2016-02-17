@@ -1,6 +1,6 @@
 .hero
 {
-	width:300px;
+	width:80%px;
 	margin:auto;
 	opacity: 0.6;
 	display:block;
@@ -16,4 +16,11 @@
 	text-align: center;
 	font-size: 20px;
 	
+}
+
+.decklist
+{
+	width:100%;
+	margin:auto;
+	display:block;
 }
