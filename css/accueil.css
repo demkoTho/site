@@ -25,5 +25,7 @@
 
 #myCarousel
 {
-	border-radius:3px;
+	width:950px;
+	display:block;
+	margin:auto;
 }

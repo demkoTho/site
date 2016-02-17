@@ -1,0 +1,19 @@
+.hero
+{
+	width:300px;
+	margin:auto;
+	opacity: 0.6;
+	display:block;
+}
+
+.hero:hover
+{
+	opacity: 0.95;
+}
+
+.deck_title
+{
+	text-align: center;
+	font-size: 20px;
+	
+}
