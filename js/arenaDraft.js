@@ -70,8 +70,15 @@ function displayNewCards()
 	for(var i = 0; i < 3; i++)
 	{
 		chosenCards.push(pool[Math.floor(Math.random() * pool.length)]);
-		zone.append($("<p>").text(chosenCards[i].name));
 	}
+	$("#card1").attr("src","images/cartes/" + chosenCards[0].name + ".png");
+	$("#card1").attr("alt", chosenCards[0].name);
+	$("#card2").attr("src","images/cartes/" + chosenCards[1].name + ".png");
+	$("#card2").attr("alt", chosenCards[1].name);
+	$("#card3").attr("src","images/cartes/" + chosenCards[2].name + ".png");
+	$("#card3").attr("alt", chosenCards[2].name);
+	
+	$("#cardsDiv").show();
 
 	console.log(chosenCards);
 	
