@@ -25,7 +25,7 @@ function loadCards() {
 		success: function(json) {
 			cards = json.filter(filterClassCard);
 			cadre = $("#draftDiv");
-			cadre.html('<p>Deck : ' + nbCards + ' cartes</p><div class="col-xs-3" id="deck_status"></div><div class="col-xs-9" id="card_choice"></div>');
+			cadre.html('<div class="col-xs-3" id="deck_status"></div><div class="col-xs-9" id="card_choice"></div>');
 			displayNewCards();
 		}
 	});
@@ -61,6 +61,7 @@ function activate(hero)
 
 function displayNewCards()
 {
+	$("#nbCards").text(nbCards);
 	var zone = $("#card_choice");
 	rarity = getRarity(Math.random())
 	console.log(rarity);
