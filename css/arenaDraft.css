@@ -24,3 +24,10 @@
 {
 	opacity: 0.95;
 }
+
+#card1, #card2, #card3
+{
+	width:80%;
+	margin:auto;
+	display:block;
+}

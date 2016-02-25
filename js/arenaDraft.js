@@ -22,7 +22,7 @@ function loadCards() {
 		url: "http://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json",
 		data: "",
 		success: function(json) {
-			cards = json.filter(filterClassCard);
+			cards = json.filter(filterWrongClassCard);
 			cadre = $("#draftDiv");
 			cadre.html('<p>Deck : ' + nbCards + ' cartes</p><div class="col-xs-3" id="deck_status"></div><div class="col-xs-9" id="card_choice"></div>');
 			displayNewCards();
@@ -30,9 +30,19 @@ function loadCards() {
 	});
 }
 
-function filterClassCard(obj) 
+function filterWrongClassCard(obj) 
 {
 	return ! ('playerClass' in obj && obj.playerClass != choosenClass.toUpperCase())
+}
+
+function filterNeutralCard(obj) 
+{
+	return ! ('playerClass' in obj)
+}
+
+function filterClassCard(obj)
+{
+	return 'playerClass' in obj && obj.playerClass == choosenClass.toUpperCase()
 }
       
 function activate(hero)
@@ -65,22 +75,29 @@ function displayNewCards()
 	console.log(rarity);
 	
 	var pool = cards.filter(filterCardRarity);
-	
+	var poolClass = pool.filter(filterClassCard);
+	var poolNeutral = pool.filter(filterNeutralCard);
+	console.log(poolClass);
+	console.log(poolNeutral);
 	var chosenCards = [];
 	for(var i = 0; i < 3; i++)
 	{
-		chosenCards.push(pool[Math.floor(Math.random() * pool.length)]);
+		if(Math.random() > 0.1)
+		{
+			chosenCards.push(poolClass[Math.floor(Math.random() * poolClass.length)]);
+			poolClass.splice(poolClass.indexOf(chosenCards[i]), 1);
+		}
+		else
+		{
+			chosenCards.push(poolNeutral[Math.floor(Math.random() * poolNeutral.length)]);
+			poolNeutral.splice(poolNeutral.indexOf(chosenCards[i]), 1);
+		}
+		console.log(chosenCards[i].name);
+		$("#card"+(i+1)).attr("src", "images/cartes/" + chosenCards[i].name + ".png");
+		$("#card"+(i+1)).attr("alt", chosenCards[i].name);
 	}
-	$("#card1").attr("src","images/cartes/" + chosenCards[0].name + ".png");
-	$("#card1").attr("alt", chosenCards[0].name);
-	$("#card2").attr("src","images/cartes/" + chosenCards[1].name + ".png");
-	$("#card2").attr("alt", chosenCards[1].name);
-	$("#card3").attr("src","images/cartes/" + chosenCards[2].name + ".png");
-	$("#card3").attr("alt", chosenCards[2].name);
 	
 	$("#cardsDiv").show();
-
-	console.log(chosenCards);
 	
 }
 
