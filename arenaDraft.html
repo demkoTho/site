@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Hearthstone : Arena Draft</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/arenaDraft.css">
+		<link rel="stylesheet" type="text/css" href="css/standard.css">
+		<script type="text/javascript" src="js/arenaDraft.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="row">
+				<a href="accueil.html"><img src="images/hearthstone_logo.jpg" alt="Hearthstone"/></a>
+			</div>
+			
+			<div class="row">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<ul class="nav navbar-nav">
+							<li class=""><a href="accueil.html">Accueil</a></li>
+							
+							<li class=""><a href="regles.html">Règles</a></li>
+								
+							<li class=""><a href="decks.html">Decks</a></li>
+							
+							<li class="active"><a href="arenaDraft.html">Arena Draft</a></li>
+
+						</ul>
+											
+					</div>
+				</nav>
+			</div>
+			
+			<div class="row">
+			
+				<h1>Simulateur d'arène</h1>
+				<br/>
+				<h4>Venez tester votre talent de créateur de deck dans ce simulateur. La règle est simple : trois cartes vous sont proposées et vous ne pouvez en choisir qu'une, jusqu'à former un deck complet de 30 cartes.
+				<br/><br/>Votre choix est ensuite analysé et comparé au meilleur choix pour établir votre score de créateur de deck !</h4>
+			</div>
+			<br/>
+			<div class="row">
+				<div id="draftDiv" class="container">
+					<button class="btn btn-success btn-large disabled" id="button_init" onclick="init_draft();">Choississez une classe<i class="icon-white icon-upload"></i></button>
+					<br/>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/rexxar.png" alt="rexxar" class="hero hunter" onclick="activate('hunter');"/>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/garrosh.png" alt="garrosh" class="hero warrior" onclick="activate('warrior');"/>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/jaina.png" alt="jaina" class="hero mage" onclick="activate('mage');"/>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/guldan.png" alt="guldan" class="hero warlock" onclick="activate('warlock');"/>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/malfurion.png" alt="malfurion" class="hero druid" onclick="activate('druid');"/>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/thrall.png" alt="thrall" class="hero shaman" onclick="activate('shaman');"/>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/uther.png" alt="uther" class="hero paladin" onclick="activate('paladin');"/>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/valeera.png" alt="valeera" class="hero rogue" onclick="activate('rogue');"/>
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<img src="images/heros/anduin.png" alt="anduin" class="hero priest" onclick="activate('priest');"/>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="row footer">
+				<p><br/><br/>Thomas Demko - Pierre Lagier / Applis Web 2016</p>
+			</div>
+				
+		</div>
+	</body>
+</html>

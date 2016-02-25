@@ -1,0 +1,26 @@
+#draftDiv
+{
+	display: block;
+	height: 800 px;
+	width: 100%;	
+}
+
+#button_init
+{
+	font-size:35px;
+	margin:auto;
+	display:block;
+}
+
+.hero
+{
+	width:80%;
+	margin:auto;
+	opacity: 0.7;
+	display:block;
+}
+
+.hero:hover
+{
+	opacity: 0.95;
+}
