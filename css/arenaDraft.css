@@ -27,7 +27,8 @@
 
 #card1, #card2, #card3
 {
-	width:80%;
+	width:280px;
+	height:400px;
 	margin:auto;
 	display:block;
 }

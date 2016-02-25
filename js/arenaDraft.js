@@ -33,7 +33,7 @@ function loadCards() {
 
 function filterWrongClassCard(obj) 
 {
-	return ! ('playerClass' in obj && obj.playerClass != choosenClass.toUpperCase())
+	return ! (('playerClass' in obj && obj.playerClass != choosenClass.toUpperCase()) || ('type' in obj && obj.type == "HERO"))
 }
 
 function filterNeutralCard(obj) 
@@ -77,18 +77,15 @@ function displayNewCards()
 	console.log(rarity);
 	
 	var pool = cards.filter(filterCardRarity);
-<<<<<<< HEAD
 	var poolClass = pool.filter(filterClassCard);
 	var poolNeutral = pool.filter(filterNeutralCard);
 	console.log(poolClass);
 	console.log(poolNeutral);
 	var chosenCards = [];
-=======
 	
->>>>>>> origin/master
 	for(var i = 0; i < 3; i++)
 	{
-		if(Math.random() > 0.1)
+		if(Math.random() > 0.5)
 		{
 			chosenCards.push(poolClass[Math.floor(Math.random() * poolClass.length)]);
 			poolClass.splice(poolClass.indexOf(chosenCards[i]), 1);
