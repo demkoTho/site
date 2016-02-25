@@ -13,6 +13,7 @@ function loadCards() {
 		data: "",
 		success: function(json) {
 			console.log(json); // this will show the info it in firebug console
+			cards = json
 		}
 	});
 }
@@ -53,4 +54,6 @@ function init_draft()
 function displayNewCards()
 {
 	var zone = $("#card_choice");
+	var cardId = Math.floor((Math.random() * 100) + 1); 
+	$("#card1").setAttribute("src", "images/cartes/" + cards[cardId].name);
 }
