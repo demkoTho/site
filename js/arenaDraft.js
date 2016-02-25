@@ -2,10 +2,11 @@ var nbCards = 0;
 var cadre;
 var cards;
 var rarity;
-var cardsInDeck;
+var cardsInDeck = [];
 var classes = ['shaman', 'paladin', 'priest', 'rogue', 'mage', 'warrior', 'druid', 'warlock', 'hunter'];
 var choosenClass;
 var probas = [0.6,0.3,0.08,0.02];
+var chosenCards = [];
 
 function init_draft()
 {
@@ -66,7 +67,6 @@ function displayNewCards()
 	
 	var pool = cards.filter(filterCardRarity);
 	
-	var chosenCards = [];
 	for(var i = 0; i < 3; i++)
 	{
 		chosenCards.push(pool[Math.floor(Math.random() * pool.length)]);
@@ -81,6 +81,17 @@ function displayNewCards()
 	$("#cardsDiv").show();
 
 	console.log(chosenCards);
+	
+}
+
+function chooseCard(card){
+	cardsInDeck.push(chosenCards[card]);
+	nbCards++;
+	chosenCards = []
+	
+	if(nbCards < 30){
+		displayNewCards();
+	}
 	
 }
 
