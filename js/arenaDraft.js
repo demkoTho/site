@@ -2,10 +2,11 @@ var nbCards = 0;
 var cadre;
 var cards;
 var rarity;
-var cardsInDeck;
+var cardsInDeck = [];
 var classes = ['shaman', 'paladin', 'priest', 'rogue', 'mage', 'warrior', 'druid', 'warlock', 'hunter'];
 var choosenClass;
 var probas = [0.6,0.3,0.08,0.02];
+var chosenCards = [];
 
 function init_draft()
 {
@@ -24,7 +25,7 @@ function loadCards() {
 		success: function(json) {
 			cards = json.filter(filterWrongClassCard);
 			cadre = $("#draftDiv");
-			cadre.html('<p>Deck : ' + nbCards + ' cartes</p><div class="col-xs-3" id="deck_status"></div><div class="col-xs-9" id="card_choice"></div>');
+			cadre.html('<div class="col-xs-3" id="deck_status"></div><div class="col-xs-9" id="card_choice"></div>');
 			displayNewCards();
 		}
 	});
@@ -70,16 +71,21 @@ function activate(hero)
 
 function displayNewCards()
 {
+	$("#nbCards").text(nbCards);
 	var zone = $("#card_choice");
 	rarity = getRarity(Math.random())
 	console.log(rarity);
 	
 	var pool = cards.filter(filterCardRarity);
+<<<<<<< HEAD
 	var poolClass = pool.filter(filterClassCard);
 	var poolNeutral = pool.filter(filterNeutralCard);
 	console.log(poolClass);
 	console.log(poolNeutral);
 	var chosenCards = [];
+=======
+	
+>>>>>>> origin/master
 	for(var i = 0; i < 3; i++)
 	{
 		if(Math.random() > 0.1)
@@ -98,6 +104,17 @@ function displayNewCards()
 	}
 	
 	$("#cardsDiv").show();
+	
+}
+
+function chooseCard(card){
+	cardsInDeck.push(chosenCards[card]);
+	nbCards++;
+	chosenCards = []
+	
+	if(nbCards < 30){
+		displayNewCards();
+	}
 	
 }
 
