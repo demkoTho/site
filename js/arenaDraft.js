@@ -1,9 +1,22 @@
 var nbCards = 0;
 var cadre;
+var cards;
 var cardsInDeck;
 var classes = ['shaman', 'paladin', 'priest', 'rogue', 'mage', 'warrior', 'druid', 'warlock', 'hunter'];
 var choosenClass;
 
+function loadCards() {
+	
+	$.ajax({
+		dataType: "json",
+		url: "http://api.hearthstonejson.com/v1/latest/enUS/cards.json",
+		data: "",
+		success: function(json) {
+			console.log(json); // this will show the info it in firebug console
+		}
+	});
+}
+      
 function activate(hero)
 {
 	if(choosenClass == null)
