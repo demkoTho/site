@@ -8,6 +8,7 @@ var choosenClass;
 var probas = [0.6,0.3,0.08,0.02];
 var chosenCards = [];
 
+// Autorise le début de la draft
 function init_draft()
 {
 	if(choosenClass != null)
@@ -16,6 +17,7 @@ function init_draft()
 	}
 }
 
+// Charge en mémoire toutes les cartes du jeu correspondant à la classe choisie
 function loadCards() {
 	
 	$.ajax({
@@ -24,28 +26,31 @@ function loadCards() {
 		data: "",
 		success: function(json) {
 			cards = json.filter(filterWrongClassCard);
-			cadre = $("#draftDiv");
-			cadre.html('<div class="col-xs-3" id="deck_status"></div><div class="col-xs-9" id="card_choice"></div>');
+			$("#draftDiv").hide();
 			displayNewCards();
 		}
 	});
 }
 
+// Elimine les cartes qui sont de la mauvaise classe (garde les neutres)
 function filterWrongClassCard(obj) 
 {
 	return ! (('playerClass' in obj && obj.playerClass != choosenClass.toUpperCase()) || ('type' in obj && obj.type == "HERO"))
 }
 
+// Garde les cartes neutres
 function filterNeutralCard(obj) 
 {
 	return ! ('playerClass' in obj)
 }
 
+// Garde les cartes de la classe choisie (élimine les neutres)
 function filterClassCard(obj)
 {
 	return 'playerClass' in obj && obj.playerClass == choosenClass.toUpperCase()
 }
-      
+ 
+// Sélection de la classe
 function activate(hero)
 {
 	if(choosenClass == null)
@@ -69,20 +74,23 @@ function activate(hero)
 	}
 }
 
+// Affiche trois nouvelles cartes sélectionnables
 function displayNewCards()
 {
+	// Choix d'une rareté
 	$("#nbCards").text(nbCards);
 	var zone = $("#card_choice");
 	rarity = getRarity(Math.random())
 	console.log(rarity);
 	
+	// Tri des cartes
 	var pool = cards.filter(filterCardRarity);
 	var poolClass = pool.filter(filterClassCard);
 	var poolNeutral = pool.filter(filterNeutralCard);
-	console.log(poolClass);
-	console.log(poolNeutral);
+
 	var chosenCards = [];
 	
+	// Sélection des cartes
 	for(var i = 0; i < 3; i++)
 	{
 		if(Math.random() > 0.5)
@@ -104,6 +112,7 @@ function displayNewCards()
 	
 }
 
+// Gestion du choix de carte
 function chooseCard(card){
 	cardsInDeck.push(chosenCards[card]);
 	nbCards++;
@@ -115,12 +124,14 @@ function chooseCard(card){
 	
 }
 
+// Garde les cartes de la bonne rareté
 function filterCardRarity(obj)
 {
 
 	return (obj.rarity == rarity || (rarity == 'COMMON' && obj.rarity =='FREE'))
 }
 
+// Choisit la rareté des cartes proposées
 function getRarity(rand)
 {
 	if(rand <= probas[0])
