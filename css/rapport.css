@@ -1,0 +1,19 @@
+h1, h2
+{
+	text-align : center;
+}
+
+h1, h2, h3, h4
+{
+		text-decoration : underline;
+}
+
+h4
+{
+	font-style : italic;
+}
+
+body
+{
+	text-align : justify;
+}
