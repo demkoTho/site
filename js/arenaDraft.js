@@ -103,8 +103,13 @@ function displayNewCards()
 			chosenCards.push(poolNeutral[Math.floor(Math.random() * poolNeutral.length)]);
 			poolNeutral.splice(poolNeutral.indexOf(chosenCards[i]), 1);
 		}
-		console.log(chosenCards[i].name);
-		$("#card"+(i+1)).attr("src", "images/cartes/" + chosenCards[i].name + ".png");
+		console.log(chosenCards[i]);
+		if(chosenCards[i].set == "BRM" || chosenCards[i].set == "TGT" || chosenCards[i].set == "LOE")
+			$("#card"+(i+1)).addClass("hearthpwn");
+		else
+			$("#card"+(i+1)).removeClass("hearthpwn");
+
+		$("#card"+(i+1)).attr("src", "images/cartes/" + chosenCards[i].name.replace(':', '') + ".png");
 		$("#card"+(i+1)).attr("alt", chosenCards[i].name);
 	}
 	
