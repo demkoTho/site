@@ -17,30 +17,32 @@
 		<video src="video.mp4" controls>Pour pouvoir voir la video de presentation, veuillez uttiliser un navigateur compatible avec HTML5</video>
 		
 		<h3>Introduction</h3>
-		<p>Pour ce projet, nous avons choisi de réaliser un site web en rapport avec un hoby que nous avons tout les deux en commun : le jeux vidéo Hearthstone.</p>
-		<p>Ce site présente le jeu et en explique les règles. Sur la page "Decks", on trouve également des exemples de decks très populaires et qui peuvent servir d'exemple aux joueurs débutants. Enfin, sur la page "Arena draft", l'uttilisateur peut s'entrainer à un mode de jeu particulier, où le joueur doit réaliser un deck à partir de cartes lui étant proposer alétoirement avant d'affronter d'autres joueurs ayant réaliser leur deck de la même manière. Nous avons recréé le mécanisme permettant au joueur de confectioner un deck à partir de cartes aléatoires et une fois que l'uttilisateur à fini sa selection, nous nous basons sur des guides écrits par des joueurs vétéran pour attribuer une note à leurs choix.</p>
+		<p>Pour ce projet, nous avons choisi de réaliser un site web en rapport avec un hobby que nous partageons : le jeu vidéo Hearthstone.</p>
+		<p>Ce site présente le jeu et en explique les règles. Sur la page "Decks", on trouve également des exemples de decks très populaires et qui peuvent servir d'exemples aux joueurs débutants. 
+		Enfin, sur la page "Arena draft", l'utilisateur peut s'entraîner à un mode de jeu particulier, où le joueur doit réaliser un deck à partir de cartes lui étant proposées alétoirement avant d'affronter d'autres joueurs ayant réalisé leur deck de la même manière. 
+		Nous avons recréé le mécanisme permettant au joueur de confectionner un deck à partir de cartes aléatoires, et une fois que l'utilisateur à fini sa sélection, nous nous basons sur des guides écrits par des joueurs vétérans pour attribuer une note à leurs choix.</p>
 		<br/>
 		
-		<h3>Technologies uttilisées</h3>
+		<h3>Technologies utilisées</h3>
 		<ul>
-			<li>HTML et CSS servent bien sur de base pour ce site.</li>
-			<li>Javascript à également beaucoup été uttilisé, notament pour la réalisation de la page "Arena Draft"</li>
-			<li>JQuery a aussi été uttilisé pour les pages "Arena Draft" et "Decks"
-			<li>Finalement, nous avons uttilisé ajax pour interroger une base de donnée Json contenant les différentes cartes</li>
+			<li>HTML et CSS servent bien sûr de base pour ce site.</li>
+			<li>Javascript à également beaucoup été utilisé, notament pour la réalisation de la page "Arena Draft"</li>
+			<li>JQuery a aussi été utilisé pour les pages "Arena Draft" et "Decks"
+			<li>Finalement, nous avons utilisé AJAX pour interroger une base de donnée JSON contenant les différentes cartes</li>
 		</ul>
-		<p>Nous avons également uttilisé la biblithèque Bootsrap, qui uttilise les technologies ci-dessus et permet d'obtenir rapidement un bon rendu visuel</p>
+		<p>Nous avons également utilisé la bibliothèque Bootsrap, qui utilise les technologies ci-dessus et permet d'obtenir rapidement un bon rendu visuel</p>
 		</br>
 		
-		<h3>Contenu detaillé des pages</h3>
+		<h3>Contenu détaillé des pages</h3>
 		<h4>Accueil</h4>
-		<p>Cette page présente très briévement Hearthstone. Elle contient notament un caroussel présentant quelques captures d'écran du jeu défilant automatiquement ou bien lorsque l'uttilisateur clique sur les flèches. Enfin, cette page, comme toutes les autres, contient un logo, une barre de navigation et un pied de page</p>
+		<p>Cette page présente très brièvement Hearthstone. Elle contient notament un caroussel présentant quelques captures d'écran du jeu défilant automatiquement ou bien lorsque l'utilisateur clique sur les flèches. Enfin, cette page, comme toutes les autres, contient un logo, une barre de navigation et un pied de page</p>
 		<h4>Règles</h4>
-		<p>Cette page présente plus en détail les mechanismes présent dans Hearthstone. Elle n'est pas très interractive mais peut s'averer nescessaire pour un visiteur ne conaissant pas du tout le jeu.</p>
+		<p>Cette page présente plus en détail les méchanismes présents dans Hearthstone. Elle n'est pas très interactive mais peut s'avérer nécessaire pour un visiteur ne connaissant pas du tout le jeu.</p>
 		<h4>Decks</h4>
-		<p>Cette page présente trois types de decks populaires de Hearthstone : le mage freeze, le guerrier controle et le chasseur agressif. Lorsque l'uttilisateur clique sur un des trois portraits de héro, la liste des cartes du decks ainsi qu'une rapide présentation apparaissent en bas de la page.</p>
+		<p>Cette page présente trois types de decks populaires de Hearthstone : le mage freeze, le guerrier contrôle et le chasseur agressif. Lorsque l'utilisateur clique sur un des trois portraits de héros, la liste des cartes du deck ainsi qu'une rapide présentation apparaissent en bas de la page.</p>
 		<h4>Arena Draft</h4>
-		<p>Comme expliqué plus haut, cette page recréé une partie du jeu et permet à l'uttilisateur de s'entrainer à créer un deck d'arène, c'est à dire un deck constitué à partir de cartes lui étant proposé aléatoirement</p>
-		<p>Cette page demande dans un premier temps à l'uttilisateur de sélectioner un héro, puis la page va sélectioner 3 cartes dans une base de donnée Json, les présenter à l'uttilisateur et lui demander d'en choisir une avant de lui presenter 3 nouvelles cartes etc jusqu'à ce que 30 cartes aient été choisies. Comme dans le mode d'arène de Hearthstone, un filtre est appliqué de manièreà ne présenter que les cartes normalement accessibles au héro sélectioner et un autre filtre assure que les 3 cartes présentées auront toujours le même niveau de rarerté (3 comunes, 3 rares, 3 épiques ou 3 légendaires)/</p>
+		<p>Comme expliqué plus haut, cette page simule l'un des modes de jeu et permet à l'utilisateur de s'entraîner à créer un deck d'arène, c'est à dire un deck constitué à partir de cartes lui étant proposées aléatoirement</p>
+		<p>Cette page demande dans un premier temps à l'utilisateur de sélectionner un héros, puis la page va sélectionner 3 cartes dans une base de données JSON, les présenter à l'utilisateur et lui demander d'en choisir une avant de lui présenter 3 nouvelles cartes etc... jusqu'à ce que 30 cartes aient été choisies. Comme dans le mode d'arène de Hearthstone, un filtre est appliqué de manière à ne présenter que les cartes normalement accessibles au héros sélectionné et un autre filtre assure que les 3 cartes présentées auront toujours le même niveau de rarerté (3 comunes, 3 rares, 3 épiques ou 3 légendaires)</p>
 
 		<div class="row footer">
 			<p><br/><br/>Thomas Demko - Pierre Lagier / Applis Web 2016</p>
