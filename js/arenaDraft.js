@@ -93,7 +93,7 @@ function displayNewCards()
 	// Sélection des cartes
 	for(var i = 0; i < 3; i++)
 	{
-		if(Math.random() > 0.5)
+		if(Math.random() > 0.6)
 		{
 			chosenCards.push(poolClass[Math.floor(Math.random() * poolClass.length)]);
 			poolClass.splice(poolClass.indexOf(chosenCards[i]), 1);
