@@ -77,19 +77,38 @@
 				</div>
 			</div>
 			
-			<div class = "row">
-				<div id="cardsDiv" class = "container" style ="display:none">
-					<p>Deck : <span id="nbCards">nbCards</span> cartes</p>
-					<div class="col-xs-12 col-md-4">
-						<img onclick="chooseCard(0)" id="card1" src="images/cartes/Abusive Sergeant.png" alt="Abusive Sergeant"/>
-					</div>
-					<div class="col-xs-12 col-md-4">
-						<img onclick="chooseCard(1)" id="card2" src="images/cartes/Abusive Sergeant.png" alt="Abusive Sergeant"/>
-					</div>
-					<div class="col-xs-12 col-md-4">
-						<img onclick="chooseCard(2)" id="card3" src="images/cartes/Abusive Sergeant.png" alt="Abusive Sergeant"/>
-					</div>
+			<div id="cardsDiv" class = "row container" style ="display:none">
+				<p>Deck : <span id="nbCards">nbCards</span> cartes</p>
+				<div class="col-xs-12 col-md-4">
+					<img onclick="chooseCard(0)" id="card1" src="images/cartes/Abusive Sergeant.png" alt="Abusive Sergeant"/>
 				</div>
+				<div class="col-xs-12 col-md-4">
+					<img onclick="chooseCard(1)" id="card2" src="images/cartes/Abusive Sergeant.png" alt="Abusive Sergeant"/>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<img onclick="chooseCard(2)" id="card3" src="images/cartes/Abusive Sergeant.png" alt="Abusive Sergeant"/>
+				</div>
+			</div>
+			<br/>
+			<br/>
+			<br/>
+			
+			<div id="deckDiv" class="row container" style="display:none">
+			
+				<div class="col-xs-6 col-md-4 table-responsive">
+					<table id="decklist" class="table table-bordered table-striped">
+						<tr>
+							<th>Name</th>
+							<th>Score</th>
+						</tr>
+					
+					</table>
+				</div>
+				
+				<div class="col-xs-6 col-md-8">
+					<p>Score : <span id="score">0</span><br/>Max Score : <span id="maxScore">0</span><br/><br/> <span id="comment">Choisissez une carte !</span></p>
+				</div>
+			
 			</div>
 			
 			

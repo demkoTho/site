@@ -30,11 +30,23 @@
 	width:290px;
 	height:400px;
 	margin:auto;
-	display:block;
 }
 
 #card1.hearthpwn, #card2.hearthpwn, #card3.hearthpwn
 {
 	width:300px;
 	height:410px;
+}
+
+#deckDiv
+{
+	height:500px;
+	width:100%;
+
+	overflow-y: auto;
+}
+
+#decklist
+{
+	width:100%;
 }

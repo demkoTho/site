@@ -1,4 +1,6 @@
 var nbCards = 0;
+var score = 0;
+var maxScore = 0;
 var cadre;
 var cards;
 var rarity;
@@ -15,6 +17,7 @@ function init_draft()
 {
 	if(choosenClass != null)
 	{
+		$("#deckDiv").show();
 		loadCards();
 	}
 }
@@ -43,8 +46,6 @@ function loadNote(name, position) {
 		data: {"name" : name, "class" : choosenClass},
 		success: function(json) {
 			notes[position] = interpretNote(json);
-			if(position == 2)
-				displayNotes();
 		}
 	});
 }
@@ -96,6 +97,8 @@ function displayNewCards()
 {
 	// Choix d'une rareté
 	$("#nbCards").text(nbCards);
+	$("#score").text(score);
+	$("#maxScore").text(maxScore);
 	rarity = getRarity(Math.random())
 	console.log(rarity);
 	
@@ -120,8 +123,8 @@ function displayNewCards()
 			chosenCards.push(poolNeutral[Math.floor(Math.random() * poolNeutral.length)]);
 			poolNeutral.splice(poolNeutral.indexOf(chosenCards[i]), 1);
 		}
-		console.log(chosenCards[i]);
-		if(chosenCards[i].set == "BRM" || chosenCards[i].set == "TGT" || chosenCards[i].set == "LOE")
+		console.log(chosenCards[i].name);
+		if(chosenCards[i].set == "BRM" || chosenCards[i].set == "TGT" || chosenCards[i].set == "LOE" || chosenCards[i].set == "NAXX")
 			$("#card"+(i+1)).addClass("hearthpwn");
 		else
 			$("#card"+(i+1)).removeClass("hearthpwn");
@@ -142,20 +145,35 @@ function interpretNote(json)
 	return parseInt(json[0].value[i]);
 }
 
-// Affiche les notes des trois cartes
-function displayNotes()
-{
-	for(var i = 0; i < 3; i++)
-	{
-		$("#card"+(i+1)).after($("<p>").text(notes[i]).css("text-align", "center"));
-	}
-}
-
 // Gestion du choix de carte
 function chooseCard(card){
 	cardsInDeck.push(chosenCards[card]);
+	
+	score += notes[card];
+	var max = Math.max.apply(Math, notes);
+	maxScore += max;
+	
+	var text = "";
+	if(notes[card] == max)
+	{
+		text = "Félicitations, " + chosenCards[card].name+ " était effectivement le meilleur choix (" + notes[card] + ")" ;
+		$("#comment").css("color", "green");
+	}
+	else
+	{
+		text = "Vous avez choisi " + chosenCards[card].name + " (" + notes[card] + ") mais le meilleur choix était " + chosenCards[notes.indexOf(max)].name + " (" + max + ")";
+		$("#comment").css("color", "red");
+	}
+	$("#comment").text(text);
+
+	
 	nbCards++;
-	chosenCards = []
+
+	var row = $("<tr>");
+	row.append($("<td>").text(chosenCards[card].name));
+	row.append($("<td>").text(notes[card]));
+	
+	$("#decklist").append(row)
 	
 	if(nbCards < 30){
 		displayNewCards();
