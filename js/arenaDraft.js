@@ -22,11 +22,25 @@ function loadCards() {
 	
 	$.ajax({
 		dataType: "json",
-		url: "http://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json",
+		url: "http://localhost:8000/cards",
 		data: "",
 		success: function(json) {
 			cards = json.filter(filterWrongClassCard);
 			$("#draftDiv").hide();
+			loadNotes();
+		}
+	});
+}
+
+// Charge en mémoire les notes des cartes présentées
+function loadNotes() {
+	
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8000/tierlist",
+		data: "",
+		success: function(json) {
+			console.log(json);
 			displayNewCards();
 		}
 	});
