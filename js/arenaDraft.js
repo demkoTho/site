@@ -3,10 +3,12 @@ var cadre;
 var cards;
 var rarity;
 var cardsInDeck = [];
-var classes = ['shaman', 'paladin', 'priest', 'rogue', 'mage', 'warrior', 'druid', 'warlock', 'hunter'];
+var classes = ['warrior', 'shaman', 'rogue', 'paladin', 'hunter', 'druid', 'warlock', 'mage', 'priest'];
 var choosenClass;
 var probas = [0.6,0.3,0.08,0.02];
 var chosenCards = [];
+var notes = [];
+
 
 // Autorise le début de la draft
 function init_draft()
@@ -27,21 +29,22 @@ function loadCards() {
 		success: function(json) {
 			cards = json.filter(filterWrongClassCard);
 			$("#draftDiv").hide();
-			loadNotes();
+			displayNewCards();
 		}
 	});
 }
 
 // Charge en mémoire les notes des cartes présentées
-function loadNotes() {
+function loadNote(name, position) {
 	
 	$.ajax({
 		dataType: "json",
 		url: "http://localhost:8000/tierlist",
-		data: "",
+		data: {"name" : name, "class" : choosenClass},
 		success: function(json) {
-			console.log(json);
-			displayNewCards();
+			notes[position] = interpretNote(json);
+			if(position == 2)
+				displayNotes();
 		}
 	});
 }
@@ -93,7 +96,6 @@ function displayNewCards()
 {
 	// Choix d'une rareté
 	$("#nbCards").text(nbCards);
-	var zone = $("#card_choice");
 	rarity = getRarity(Math.random())
 	console.log(rarity);
 	
@@ -101,8 +103,9 @@ function displayNewCards()
 	var pool = cards.filter(filterCardRarity);
 	var poolClass = pool.filter(filterClassCard);
 	var poolNeutral = pool.filter(filterNeutralCard);
-
-	var chosenCards = [];
+	
+	chosenCards = [];
+	notes = [];
 	
 	// Sélection des cartes
 	for(var i = 0; i < 3; i++)
@@ -125,10 +128,27 @@ function displayNewCards()
 
 		$("#card"+(i+1)).attr("src", "images/cartes/" + chosenCards[i].name.replace(':', '') + ".png");
 		$("#card"+(i+1)).attr("alt", chosenCards[i].name);
+		loadNote(chosenCards[i].name, i);
 	}
 	
 	$("#cardsDiv").show();
 	
+}
+
+// Interprète le résultat de la requête au web service
+function interpretNote(json)
+{
+	var i = classes.indexOf(choosenClass);
+	return parseInt(json[0].value[i]);
+}
+
+// Affiche les notes des trois cartes
+function displayNotes()
+{
+	for(var i = 0; i < 3; i++)
+	{
+		$("#card"+(i+1)).after($("<p>").text(notes[i]).css("text-align", "center"));
+	}
 }
 
 // Gestion du choix de carte
@@ -146,7 +166,6 @@ function chooseCard(card){
 // Garde les cartes de la bonne rareté
 function filterCardRarity(obj)
 {
-
 	return (obj.rarity == rarity || (rarity == 'COMMON' && obj.rarity =='FREE'))
 }
 
