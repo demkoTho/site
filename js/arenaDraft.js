@@ -153,24 +153,26 @@ function chooseCard(card){
 	var max = Math.max.apply(Math, notes);
 	maxScore += max;
 	
+	var color = "black";
 	var text = "";
 	if(notes[card] == max)
 	{
-		text = "Félicitations, " + chosenCards[card].name+ " était effectivement le meilleur choix (" + notes[card] + ")" ;
-		$("#comment").css("color", "green");
+		text = "Félicitations ! " + chosenCards[card].name+ " était effectivement le meilleur choix (" + notes[card] + ")" ;
+		color = "green";
 	}
 	else
 	{
 		text = "Vous avez choisi " + chosenCards[card].name + " (" + notes[card] + ") mais le meilleur choix était " + chosenCards[notes.indexOf(max)].name + " (" + max + ")";
-		$("#comment").css("color", "red");
+		color = "red";
 	}
+	
+	$("#comment").css("color", color);
 	$("#comment").text(text);
-
 	
 	nbCards++;
 
 	var row = $("<tr>");
-	row.append($("<td>").text(chosenCards[card].name));
+	row.append($("<td>").text(chosenCards[card].name)).css("color", color);
 	row.append($("<td>").text(notes[card]));
 	
 	$("#decklist").append(row)
