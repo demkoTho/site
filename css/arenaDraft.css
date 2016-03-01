@@ -43,3 +43,16 @@
 	height:500px;
 	width:100%;
 }
+
+#finalResult
+{
+	text-align:center;
+	font-size:30px;
+}
+
+#restart
+{
+	border: 2px solid black;
+	border-radius: 10px;
+	padding : 5px;
+}

@@ -170,6 +170,7 @@ function chooseCard(card){
 	$("#comment").text(text);
 	
 	nbCards++;
+	$("#nbCards").text(nbCards);
 
 	var row = $("<tr>");
 	row.append($("<td>").text(chosenCards[card].name)).css("color", color);
@@ -179,6 +180,10 @@ function chooseCard(card){
 	
 	if(nbCards < 30){
 		displayNewCards();
+	}else{
+		$("#cardsDiv").hide();
+		$("#percentResult").text(Math.round(100*score/maxScore));
+		$("#finalResult").show();
 	}
 	
 }
