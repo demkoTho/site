@@ -149,22 +149,24 @@ function interpretNote(json)
 function chooseCard(card){
 	cardsInDeck.push(chosenCards[card]);
 	
-	score += notes[card];
 	var max = Math.max.apply(Math, notes);
 	maxScore += max;
 	
 	var color = "black";
 	var text = "";
+	var gain = 0;
 	if(notes[card] == max)
 	{
 		text = "Félicitations ! " + chosenCards[card].name+ " était effectivement le meilleur choix (" + notes[card] + ")" ;
 		color = "green";
+		gain = notes[card];
 	}
 	else
 	{
 		text = "Vous avez choisi " + chosenCards[card].name + " (" + notes[card] + ") mais le meilleur choix était " + chosenCards[notes.indexOf(max)].name + " (" + max + ")";
 		color = "red";
 	}
+	score += gain;
 	
 	$("#comment").css("color", color);
 	$("#comment").text(text);
@@ -173,8 +175,8 @@ function chooseCard(card){
 	$("#nbCards").text(nbCards);
 
 	var row = $("<tr>");
-	row.append($("<td>").text(chosenCards[card].name)).css("color", color);
-	row.append($("<td>").text(notes[card]));
+	row.append($("<td>").text(chosenCards[card].name).css("color", color));
+	row.append($("<td>").text(gain).css("color", color));
 	
 	$("#decklist").append(row)
 	

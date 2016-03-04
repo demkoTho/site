@@ -20,7 +20,24 @@
 
 .decklist
 {
-	width:100%;
-	margin:auto;
+	max-height:350px;
+	overflow-y:auto;
+}
+
+#huntard, #control, #freeze, #message
+{
+	height:400px;
+}
+
+.preview
+{
+	height:350px;
 	display:block;
+	margin:auto;
+}
+
+.preview > img
+{
+	width:260px;
+	height:350px;
 }
