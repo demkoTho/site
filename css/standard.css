@@ -3,3 +3,20 @@
 	font-size: 12px;
 	color: gray;
 }
+
+h1{
+	color : rgb(0,221,221);
+	text-shadow:1px 1px 1px rgb(0, 100, 150);
+}
+
+h2
+{
+	line-height : 120%;
+	border-bottom : solid 1px #d0b200;
+	color:rgb(255, 239, 94);
+	text-shadow:1px 1px 1px rgb(187, 168, 0);
+}
+
+h1, h2, h3{
+	font-weight : bold;
+}
