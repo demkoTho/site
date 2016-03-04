@@ -4,7 +4,7 @@ $(document).ready(function(){
 		while(block.next().size() > 0 && !(block.next().is("h2")))
 			{
 				block = block.next();
-				block.toggle();
+				block.toggle(200);
 			}
 	});
 });

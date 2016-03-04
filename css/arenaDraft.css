@@ -1,4 +1,4 @@
-#draftDiv
+#draftDiv, #finalResult
 {
 	display: block;
 	height: 800 px;
@@ -31,6 +31,7 @@
 	width:290px;
 	height:400px;
 	margin:auto;
+	cursor:pointer;
 }
 
 #card1.hearthpwn, #card2.hearthpwn, #card3.hearthpwn
@@ -45,10 +46,17 @@
 	width:100%;
 }
 
+#comment
+{
+	font-size:18px;
+}
+
 #finalResult
 {
 	text-align:center;
 	font-size:30px;
+	border: 1px solid black;
+	border-radius: 5px;
 }
 
 #restart

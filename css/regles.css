@@ -2,3 +2,8 @@ p
 {
 	text-align: justify;
 }
+
+h2
+{
+	cursor : pointer;
+}
