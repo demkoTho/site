@@ -78,7 +78,7 @@
 			</div>
 			
 			<div id="cardsDiv" class = "row container" style ="display:none">
-				<p>Deck : <span id="nbCards">nbCards</span> cartes</p>
+				<p><b>Deck : </b><span id="nbCards">nbCards</span> / 30 cartes</p>
 				<div class="col-xs-12 col-md-4">
 					<img onclick="chooseCard(0)" id="card1" src="images/cartes/Abusive Sergeant.png" alt="Abusive Sergeant"/>
 				</div>
@@ -92,7 +92,7 @@
 			<div id = "finalResult" class="row container" style="display:none">
 				<p>Deck terminé</p><br/>
 				<p>Vous avez obtenu <span id="percentResult"></span>% du score maximum</p><br/>
-				<p><a href="arenaDraft.html" id="restart">Recommencer</a></p>
+				<a href="arenaDraft.html" id="restart"><button class="btn btn-primary btn-large">Recommencer</button></a>
 			</div>
 			<br/>
 			<br/>
@@ -100,15 +100,18 @@
 			<div id="deckDiv" class="row container" style="display:none">
 			
 				<div class="col-xs-6 col-md-4" style="overflow: auto; max-height: 500px;">
-					<table id="decklist" class="table table-bordered table-striped">
-						<tr>
+					<table id="decklist" class="table table-bordered table-hover">
+						<thead class="thead-default">
+							<tr>
 							<th>Name</th>
 							<th>Score</th>
-						</tr>
+							</tr>
+						</thead>
 					</table>
 				</div>
 				
-				<div class="col-xs-6 col-md-8">
+				<div class="col-xs-6 col-md-8 container">
+					<br/>
 					<p><b>Score :</b> <span id="score">0</span><br/><b>Max Score : </b><span id="maxScore">0</span><br/><br/> <span id="comment">Choisissez une carte !</span></p>
 				</div>
 			

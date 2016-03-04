@@ -155,6 +155,8 @@ function chooseCard(card){
 	var color = "black";
 	var text = "";
 	var gain = 0;
+	var row = $("<tr>");
+
 	if(notes[card] == max)
 	{
 		text = "Félicitations ! " + chosenCards[card].name+ " était effectivement le meilleur choix (" + notes[card] + ")" ;
@@ -174,7 +176,6 @@ function chooseCard(card){
 	nbCards++;
 	$("#nbCards").text(nbCards);
 
-	var row = $("<tr>");
 	row.append($("<td>").text(chosenCards[card].name).css("color", color));
 	row.append($("<td>").text(gain).css("color", color));
 	

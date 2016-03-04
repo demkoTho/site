@@ -3,3 +3,8 @@
 	font-size: 12px;
 	color: gray;
 }
+
+tr
+{
+	cursor : pointer;
+}
