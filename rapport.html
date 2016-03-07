@@ -17,34 +17,35 @@
 		<video src="video.mp4" controls>Pour pouvoir voir la video de presentation, veuillez uttiliser un navigateur compatible avec HTML5</video>
 		
 		<h3>Introduction</h3>
-		<p>Pour ce projet, nous avons choisi de réaliser un site web en rapport avec un hobby que nous partageons : le jeu vidéo Hearthstone.</p>
-		<p>Ce site présente le jeu et en explique les règles. Sur la page "Decks", on trouve également des exemples de decks très populaires et qui peuvent servir d'exemples aux joueurs débutants. 
-		Enfin, sur la page "Arena draft", l'utilisateur peut s'entraîner à un mode de jeu particulier, où le joueur doit réaliser un deck à partir de cartes lui étant proposées alétoirement avant d'affronter d'autres joueurs ayant réalisé leur deck de la même manière. 
-		Nous avons recréé le mécanisme permettant au joueur de confectionner un deck à partir de cartes aléatoires, et une fois que l'utilisateur à fini sa sélection, nous nous basons sur des guides écrits par des joueurs vétérans pour attribuer une note à leurs choix.</p>
+		<p>Pour ce projet, nous avons choisi de r&eacutealiser un site web en rapport avec un hobby que nous partageons : le jeu vid&eacuteo Hearthstone.</p>
+		<p>Ce site pr&eacutesente le jeu et en explique les r&egravegles. Sur la page "Decks", on trouve &eacutegalement des exemples de decks tr&egraves populaires et qui peuvent servir d'exemples aux joueurs d&eacutebutants. 
+		Enfin, sur la page "Arena draft", l'utilisateur peut s'entraîner &agrave un mode de jeu particulier, où le joueur doit r&eacutealiser un deck &agrave partir de cartes lui &eacutetant propos&eacutees al&eacutetoirement avant d'affronter d'autres joueurs ayant r&eacutealis&eacute leur deck de la m&ecircme mani&egravere. 
+		Nous avons recr&eacute&eacute le m&eacutecanisme permettant au joueur de confectionner un deck &agrave partir de cartes al&eacuteatoires, et une fois que l'utilisateur &agrave fini sa s&eacutelection, nous nous basons sur des guides &eacutecrits par des joueurs v&eacutet&eacuterans pour attribuer une note &agrave leurs choix.</p>
 		<br/>
 		
-		<h3>Technologies utilisées</h3>
+		<h3>Technologies utilis&eacutees</h3>
 		<ul>
 			<li>HTML et CSS servent bien sûr de base pour ce site.</li>
-			<li>Javascript a également beaucoup été utilisé, notament pour la réalisation de la page "Arena Draft"</li>
-			<li>JQuery a aussi été utilisé pour les pages "Arena Draft" et "Decks"
-			<li>Nous avons aussi utilisé Node.js pour créer un web service que l'on pourra interroger pour récupérer les informations qui nous intéressent sur les cartes
-			<li>Finalement, nous avons utilisé AJAX pour interroger une base de donnée JSON contenant les différentes cartes</li>
+			<li>Javascript a &eacutegalement beaucoup &eacutet&eacute utilis&eacute, notament pour la r&eacutealisation de la page "Arena Draft"</li>
+			<li>JQuery a aussi &eacutet&eacute utilis&eacute pour r&eacutealiser diverses animations
+			<li>Nous avons aussi utilis&eacute Node.js pour cr&eacuteer un web service que l'on pourra interroger pour r&eacutecup&eacuterer les informations qui nous int&eacuteressent sur les cartes
+			<li>Finalement, nous avons utilis&eacute AJAX pour interroger une base de donn&eacutee JSON contenant les diff&eacuterentes cartes</li>
 		</ul>
-		<p>Nous avons également utilisé la bibliothèque Bootsrap, qui utilise les technologies ci-dessus et permet d'obtenir rapidement un bon rendu visuel</p>
+		<p>Nous avons &eacutegalement utilis&eacute la biblioth&egraveque Bootsrap, qui utilise les technologies ci-dessus et permet d'obtenir rapidement un bon rendu visuel</p>
 		<p><b>Important :</b> il faut lancer le service web cardstierws.js avec Node.js pour que le site fonctionne correctement</p>
 		</br>
 		
-		<h3>Contenu détaillé des pages</h3>
+		<h3>Contenu d&eacutetaill&eacute des pages</h3>
 		<h4>Accueil</h4>
-		<p>Cette page présente très brièvement Hearthstone. Elle contient notament un caroussel présentant quelques captures d'écran du jeu défilant automatiquement ou bien lorsque l'utilisateur clique sur les flèches. Enfin, cette page, comme toutes les autres, contient un logo, une barre de navigation et un pied de page</p>
-		<h4>Règles</h4>
-		<p>Cette page présente plus en détail les méchanismes présents dans Hearthstone. Elle n'est pas très interactive mais peut s'avérer nécessaire pour un visiteur ne connaissant pas du tout le jeu.</p>
+		<p>Cette page pr&eacutesente tr&egraves bri&egravevement Hearthstone. Elle contient notament un caroussel pr&eacutesentant quelques captures d'&eacutecran du jeu d&eacutefilant automatiquement ou bien lorsque l'utilisateur clique sur les fl&egraveches. Enfin, cette page, comme toutes les autres, contient un logo, une barre de navigation et un pied de page</p>
+		<h4>R&egravegles</h4>
+		<p>Cette page pr&eacutesente plus en d&eacutetail les m&eacutechanismes pr&eacutesents dans Hearthstone. Le contenu de la page s'affiche ou se cache lorsque l'uttilisateur clique sur les differents titres.</p>
 		<h4>Decks</h4>
-		<p>Cette page présente trois types de decks populaires de Hearthstone : le mage freeze, le guerrier contrôle et le chasseur agressif. Lorsque l'utilisateur clique sur un des trois portraits de héros, la liste des cartes du deck ainsi qu'une rapide présentation apparaissent en bas de la page.</p>
+		<p>Cette page pr&eacutesente trois types de decks populaires de Hearthstone : le mage freeze, le guerrier contrôle et le chasseur agressif. Lorsque l'utilisateur clique sur un des trois portraits de h&eacuteros, la liste des cartes du deck ainsi qu'une rapide pr&eacutesentation apparaissent en bas de la page. Il estde plus possible de voir une des cartes du deck en details en passant la sourie au dessus de son nom.</p>
 		<h4>Arena Draft</h4>
-		<p>Comme expliqué plus haut, cette page simule l'un des modes de jeu et permet à l'utilisateur de s'entraîner à créer un deck d'arène, c'est à dire un deck constitué à partir de cartes lui étant proposées aléatoirement</p>
-		<p>Cette page demande dans un premier temps à l'utilisateur de sélectionner un héros, puis la page va sélectionner 3 cartes dans une base de données JSON, les présenter à l'utilisateur et lui demander d'en choisir une avant de lui présenter 3 nouvelles cartes etc... jusqu'à ce que 30 cartes aient été choisies. Comme dans le mode d'arène de Hearthstone, un filtre est appliqué de manière à ne présenter que les cartes normalement accessibles au héros sélectionné et un autre filtre assure que les 3 cartes présentées auront toujours le même niveau de rarerté (3 comunes, 3 rares, 3 épiques ou 3 légendaires)</p>
+		<p>Comme expliqu&eacute plus haut, cette page simule l'un des modes de jeu et permet &agrave l'utilisateur de s'entraîner &agrave cr&eacuteer un deck d'ar&egravene, c'est &agrave dire un deck constitu&eacute &agrave partir de cartes lui &eacutetant propos&eacutees al&eacuteatoirement</p>
+		<p>Cette page demande dans un premier temps &agrave l'utilisateur de s&eacutelectionner un h&eacuteros, puis la page va s&eacutelectionner 3 cartes dans une base de donn&eacutees JSON, les pr&eacutesenter &agrave l'utilisateur et lui demander d'en choisir une avant de lui pr&eacutesenter 3 nouvelles cartes etc... jusqu'&agrave ce que 30 cartes aient &eacutet&eacute choisies. Comme dans le mode d'ar&egravene de Hearthstone, un filtre est appliqu&eacute de mani&egravere &agrave ne pr&eacutesenter que les cartes normalement accessibles au h&eacuteros s&eacutelectionn&eacute et un autre filtre assure que les 3 cartes pr&eacutesent&eacutees auront toujours le m&ecircme niveau de rarert&eacute (3 comunes, 3 rares, 3 &eacutepiques ou 3 l&eacutegendaires)</p>
+		<p>De plus &agrave chaque carte est associ&eacute une valeure indiquant si la carte est un bon choix ou non (en r&eacutealit&eacute neuf valeures sont associ&eacutees &agrave chaquue carte, car la qualit&eacute de certaines carte depend du h&eacutero avec laquelle on la joue). Le but du jeu pour l'uttilisateur est ici de choisir la carte avec la meilleure valeure. Le score de l'uttilisateur est calcul&eacute de la mani&egravere suivante : lorsqu'il choisi la meilleure carte il marque autant de point que la valeure de la carte et lorsqu'il choisie une autre carte, il ne marque aucun point. Bien sûr le score maximum atteignable depend des cartes qui sont propos&eacutees &agrave l'uttilisateur. C'est pourquoi on pr&eacutesente &agrave l'uttilisateur le pourcentage du score maximal qu'il a atteint et qui peut &ecirctre compar&eacute d'un draft &agrave un autre.</p>
 
 		<div class="row footer">
 			<p><br/><br/>Thomas Demko - Pierre Lagier / Applis Web 2016</p>
